@@ -1,0 +1,138 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.form, ul {
+  width: 300px;
+  margin: 32px auto 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter {
+  width: 300px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.form > div {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form select,
+.filter select {
+  display: block;
+  padding: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  flex-grow: 1;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.form input[type="button"] {
+  width: 80px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  width: 20px; 
+  height: 20px;
+  appearance: none; 
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: lightgray; 
+  border-color: lightgray; 
+}
+
+input[type="checkbox"]:hover, input[type="checkbox"]:focus {
+  border-color: #888; 
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
+  margin: 0 0 8px;
+  padding: 8px 0;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+li.expired {
+  background: #fcc;
+}
+
+li label {
+  flex: 1;
+  display: block;
+  line-height: 32px;
+  min-height: 32px;
+}
+
+li label p {
+  margin: 4px 30px 4px;
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+li label span {
+  font-size: 0.8em;
+  vertical-align: center;
+  color: #999;
+  margin-right: 10px;
+  margin-left: 4px;
+}
+
+li:has(input:checked) {
+  background: #ffd;
+}
+
+li button {
+  appearance: none;
+  border: none;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgb(0 0 0 / 0.1);
+  margin-right: 8px;
+  margin-left: auto;
+}
+
+li button:hover {
+  background: rgba(0 0 0 / 0.4);
+}
+
+@media (max-width: 480px) {
+  .form, .filter, ul {
+    width: 100%; 
+  }
+  .form input, .form select {
+    font-size: 14px; 
+  }
+}
